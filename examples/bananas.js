@@ -1,8 +1,9 @@
 var express = require('express');
 var _ = require('underscore');
 var ObjectID = require('mongodb').ObjectID;
-var RestSchema = require('./lib/restSchema');
-var schema = RestSchema.validator('./schemas/');
+
+var RestSchema = require('../lib/restSchema');
+var schema = RestSchema.validator(__dirname + '/schemas/');
 
 var app = express();
 

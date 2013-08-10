@@ -1,12 +1,25 @@
 {
-  "name": "bananas",
-  "description": "go bananas",
+  "name": "restSpec",
+  "description": "JSON spec validator for RESTful APIs",
   "version": "0.0.1",
-  "private": true,
+  "keywords": [
+    "library",
+    "middleware",
+    "express",
+    "validation",
+    "json"
+  ],
+  "repository": "git://github.com/theorm/restSpec.git",
+  "author": "Roman Kalyakin <roman@kalyakin.com>",
   "dependencies": {
     "express": "3.x",
     "jayschema": "0.2.0",
     "underscore": "1.5.1",
+  },
+  "devDependencies": {
     "mongodb": "*"
+  }, 
+  "engines": {
+    "node": ">= 0.8.0"
   }
 }
