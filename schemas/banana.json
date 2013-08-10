@@ -1,0 +1,10 @@
+{
+    "type": "object",
+    "properties": {
+        "name": {"type": "string", "description": "Banana name."},
+        "id": {"type": "integer", "description": "Banana ID."}
+    },
+    "required": ["id", "name"],
+    "additionalProperties": false,
+    "description": "Banana!"
+}
