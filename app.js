@@ -1,7 +1,7 @@
 var express = require('express');
 var _ = require('underscore');
 var ObjectID = require('mongodb').ObjectID;
-var RestSchema = require('./lib/rest-schema');
+var RestSchema = require('./lib/restSchema');
 var schema = RestSchema.validator('./schemas/');
 
 var app = express();
@@ -54,8 +54,7 @@ app.get('/bananas/:id', function(req, res) {
 });
 
 // ----------------------
-app.get('/', RestSchema.explorer(app));
-app.use(express.static(__dirname + '/lib/static'))
+RestSchema.explorer('/spec', app)
 
 app.listen(3000);
 console.log('Listening on port 3000');
