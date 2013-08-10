@@ -27,15 +27,14 @@ bananas.find_by_id = function(id) {
   });
 }
 
-app.get('/bananas', function(req, res) {
-  console.log(req);
+app.get('/bananas', schema('get_bananas'), function(req, res) {
   res.json(bananas);
 });
 
 app.post('/bananas', schema('banana'), function(req, res) {
 
   var newBanana = req.body;
-  console.log(newBanana)
+
   if (!newBanana.id) {
     newBanana.id = new ObjectID();
   }
