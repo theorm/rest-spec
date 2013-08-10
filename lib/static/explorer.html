@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html ng-app="RestSchemaExplorerApp">
+  <head>
+    <title>Bootstrap 101 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <!--link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css" rel="stylesheet" media="screen"-->  
+    <link href="bootstrap.min.css" rel="stylesheet" media="screen">  
+
+    <style type="text/css">
+      blockquote {
+        margin: 0px;
+        cursor: pointer;
+      }
+      .collapsed {
+        border-bottom: 1px solid #eee;
+      }
+      .collapsable {
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+        border-left: 5px solid #eee;
+      }
+      .required {
+        color: #c7254e;
+      }
+      ul:before {
+        content: '{';
+      }
+      ul:after {
+        content: '}';
+      }
+      ul.list-unstyled li {
+        margin-left: 15px;
+      }
+      .well {
+        margin-bottom: 0;
+      }
+      .method {
+        text-transform: uppercase;
+        margin-right: 10px;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <div class="container">
+      <div ng-controller="EndpointsCtrl">
+        <div class="row" ng-repeat="endpoint in endpoints">  
+          <div class="col-lg-12 col-12 col-sm-12">
+            <blockquote data-toggle="collapse" data-target="#endpoint-{{ $index }}" class="collapsed">
+              <p><em class="method">{{ endpoint.method }}</em>{{ endpoint.path }}</p>
+            </blockquote>
+            <div id="endpoint-{{ $index }}" class="collapse collapsable">
+              <div json-schema-doc="endpoint.schema" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- JavaScript plugins (requires jQuery) -->
+    <!-- script src="//code.jquery.com/jquery.min.js"></script -->
+    <script src="jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <!--script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script-->
+    <script src="bootstrap.min.js"></script>
+
+    <!--script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script-->
+    <script src="angular.min.js"></script>
+
+    <!--script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular-resource.min.js"></script-->
+    <script src="angular-resource.min.js"></script>
+
+    <script src="explorer.js"></script>
+
+  </body>
+</html>

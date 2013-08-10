@@ -1,0 +1,17 @@
+<div class="well">
+    <p class="lead">
+        {{ schema.description }}
+    </p>
+    <ul class="list-unstyled">
+        <li ng-repeat="(name, property) in schema.properties">
+            <p ng-if="property.type !== 'object'" >
+                "<em ng-class="{required: schema.required && schema.required.indexOf(name) != -1}">{{ name }}</em>":
+                <strong>{{ property.type }}</strong>
+                {{ property.description}}
+            </p>
+            <div>
+                <div ng-if="property.type == 'object'" json-schema-doc="property" />
+            </div>
+        </li>
+    </ul>
+</div>

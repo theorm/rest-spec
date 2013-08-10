@@ -2,7 +2,16 @@
     "type": "object",
     "properties": {
         "name": {"type": "string", "description": "Banana name."},
-        "id": {"type": "integer", "description": "Banana ID."}
+        "id": {"type": "integer", "description": "Banana ID."},
+        "origin": {
+            "type": "object",
+            "description": "Where banana came from.",
+            "properties": {
+                "country": {"type": "string", "description": "Country of origin."},
+                "farm": {"type": "string", "description": "Where it was picked."}
+            },
+            "required": ["country"]
+        }
     },
     "required": ["id", "name"],
     "additionalProperties": false,

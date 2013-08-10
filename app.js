@@ -54,8 +54,9 @@ app.get('/bananas/:id', function(req, res) {
   res.json(banana)
 });
 
-
+// ----------------------
 app.get('/', RestSchema.explorer(app));
+app.use(express.static(__dirname + '/lib/static'))
 
 app.listen(3000);
 console.log('Listening on port 3000');
