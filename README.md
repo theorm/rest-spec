@@ -1,6 +1,6 @@
 # restSpec
 
-Request data validating library for RESTful APIs. RestSpec can validate _POST/PUT/PATCH_ JSON data as well as _GET/DELETE_ query string parameters using (JSON schema)[http://json-schema.org/] and is easy to use with [express.js](http://expressjs.com/). It generates endpoint documentation on the fly too.
+Request data validating library for RESTful APIs. RestSpec can validate _POST/PUT/PATCH_ JSON data as well as _GET/DELETE_ query string parameters using [JSON schema](http://json-schema.org/) and is easy to use with [express.js](http://expressjs.com/). It generates endpoint documentation on the fly too.
 
 ## Example
 
