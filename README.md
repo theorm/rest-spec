@@ -31,7 +31,7 @@ Say, we run an API for a blog. We could define our schema for a blog post like t
 }
 ```
 
-Our API code references this schema in a middleware that will return a `400` reponse with a list of errors before the main body of the endpoint is executed. The name of the schema is taken from the filename.
+Our API code references this schema in a middleware that will return a `422` reponse with a list of errors before the main body of the endpoint is executed. The name of the schema is taken from the filename.
 
 ```javascript
 var express = require('express');
@@ -58,7 +58,7 @@ console.log('Running API on port 3000');
 
 ```
 
-POSTing malformed request will make API return `400` with the reason:
+POSTing malformed request will make API return `422` with the reason:
 
 ```bash
 $ curl -XPOST -H "Content-Type: application/json" -d '{"title": "My first post", "kittens": true}' http://localhost:3000/posts
