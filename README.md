@@ -4,7 +4,7 @@ Request data validating library for RESTful APIs. RestSpec can validate _POST/PU
 
 ## Example
 
-Say, we run an API for a blog. We could define our schema for a blog post like this and save it as a `post.json` file:
+Say, we run an API for a blog. We could define our schema for a blog post like this and save it in a `post.json` file:
 
 ```json
 {
@@ -36,7 +36,7 @@ Our API code references this schema in a middleware that will return a `400` rep
 ```javascript
 var express = require('express');
 var RestSpec = require('restSpec');
-var schema = RestSpec.validator(__dirname);
+var schema = RestSpec.validator(__dirname); // look for spec files in current directory
 var storage = require('myWickedStorage');
 
 var app = express();
@@ -50,6 +50,7 @@ app.post('/posts', schema('post'), function(req, res, next) {
     });
 });
 
+// make API documentation accessible at `/docs/` URL. 
 RestSchema.explorer('/docs', app)
 
 app.listen(3000);
@@ -57,10 +58,10 @@ console.log('Running API on port 3000');
 
 ```
 
-POSTing malformed request will make API return `400` with an explanation:
+POSTing malformed request will make API return `400` with the reason:
 
 ```bash
-$ curl -XPOST -H "Content-Type: application/json" -d '{"title": "My first post"}' http://localhost:3000/posts
+$ curl -XPOST -H "Content-Type: application/json" -d '{"title": "My first post", "kittens": true}' http://localhost:3000/posts
 
 {
   "description": "Some fields failed to validate",
@@ -68,6 +69,10 @@ $ curl -XPOST -H "Content-Type: application/json" -d '{"title": "My first post"}
     {
       "field": "body",
       "error": "Required."
+    },
+    {
+      "field": "kittens",
+      "error": "Extra field not allowed"
     }
   ]
 }
@@ -78,4 +83,4 @@ Note the `explorer` bit in the api code:
 RestSchema.explorer('/docs', app)
 ```
 
-It enabled dynamically generated documentation of the API on `/docs`.
+It maps dynamically generated documentation to `/docs`.
