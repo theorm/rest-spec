@@ -66,7 +66,7 @@ app.get('/bananas/:id', api.get);
 app.post('/bananas', schema('banana'), api.post);
 
 // ----------------------
-RestSchema.explorer('/spec', app)
+RestSchema.explorer('/docs', app)
 
 app.listen(3000);
 console.log('Listening on port 3000');
