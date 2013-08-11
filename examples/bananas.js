@@ -18,8 +18,7 @@ app.use(express.json({strict: true}));
 
 
 var bananas = [
-  {id:1, name:'one'},
-  {id:2, name:'two'},
+  {id:1, name:'cavendish', origin: {country: 'straya'}},
 ];
 
 bananas.find_by_id = function(id) {
