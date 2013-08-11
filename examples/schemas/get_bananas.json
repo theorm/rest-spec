@@ -1,7 +1,7 @@
 {
     "type": "object",
     "properties": {
-        "limit": {"type": "int", "description": "Number of bananas returned. 10 by default."}
+        "limit": {"type": "integer", "description": "Number of bananas returned. 10 by default."}
     },
     "additionalProperties": false,
     "description": "Get a list of bananas."

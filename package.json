@@ -13,8 +13,8 @@
   "author": "Roman Kalyakin <roman@kalyakin.com>",
   "dependencies": {
     "express": "3.x",
-    "jayschema": "0.2.0",
-    "underscore": "1.5.1"
+    "jayschema": ">= 0.2.0",
+    "underscore": ">= 1.5.1"
   },
   "devDependencies": {
     "mongodb": "*"
