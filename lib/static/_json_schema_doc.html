@@ -6,7 +6,7 @@
         <li ng-repeat="(name, property) in schema.properties">
             <p ng-if="property.type !== 'object'" >
                 "<em ng-class="{required: schema.required && schema.required.indexOf(name) != -1}">{{ name }}</em>":
-                <strong>{{ property.type }}</strong>
+                <strong>{{ property.type }} <em>{{property.pattern || property.format}}</em></strong>
                 {{ property.description}}
             </p>
             <div>
