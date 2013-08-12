@@ -1,5 +1,5 @@
 {
-  "name": "restSpec",
+  "name": "rest-spec",
   "description": "JSON spec validator for RESTful APIs",
   "version": "0.0.1",
   "keywords": [
@@ -8,6 +8,7 @@
     "express",
     "validation",
     "json",
+		"schema",
     "rest",
     "api",
     "documentation",
